@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL1(TASK2)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color:lightblue;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color:pink;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+    <p>Result: <span id="result"></span></p>
+    <button id="colorButton">CLICK ON ME!!</button>
+</body>
+
+<script>
+    function addNumbers() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+
+
+        const button = document.getElementById("colorButton");
+        button.addEventListener("click", function () {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.style.backgroundColor = randomColor;
+        });
+
+
+        if (!isNaN(num1) && !isNaN(num2)) {
+            document.getElementById("result").textContent = num1 + num2;
+        } else {
+            alert("Please enter valid numbers.");
+        }
+        const hour = new Date().getHours();
+        let message;
+        if (hour < 12) {
+            message = "Good morning!";
+        } else if (hour < 18) {
+            message = "Good afternoon!";
+        } else {
+            message = "Good evening!";
+        }
+        alert(message);
+    }
+    showGreeting();
+
+</script>
+</body>
+
+</html>
