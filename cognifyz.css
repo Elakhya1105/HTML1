@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.cta {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta:hover {
+    background: #c0392b;
+}
+
+section {
+    padding: 20px;
+    background: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    padding: 15px 20px;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #34495e;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    padding: 10px;
+}
+
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown a {
+    padding: 10px;
+    display: block;
+    color: white;
+}
+
+.dropdown a:hover {
+    background: #007bff;
+}
+
+.dropdown-container:hover .dropdown {
+    display: flex;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #2c3e50;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+}
+
+.mobile-menu a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-dropdown {
+    display: none;
+    flex-direction: column;
+    background: #34495e;
+}
+
+.mobile-menu .dropdown-toggle {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-menu .dropdown-toggle:hover {
+    background: #007bff;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-dropdown.active {
+        display: flex;
+    }
+}
+
