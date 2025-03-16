@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="ref.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: #333;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Website</div>
+            <button class="hamburger" id="hamburger">
+                &#9776;
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="res.html">Home</a></li>
+                <li><a href="2.html">About</a></li>
+                <li><a href="3.html">Services</a></li>
+                <li><a href="4.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div class="service">
+                    <h3>Web Development</h3>
+                    <p>We create dynamic and responsive websites tailored to your business needs.</p>
+                </div>
+                <div class="service">
+                    <h3>UI/UX Design</h3>
+                    <p>Our designs ensure an intuitive and seamless user experience across all platforms.</p>
+                </div>
+                <div class="service">
+                    <h3>SEO Optimization</h3>
+                    <p>Enhance your website's visibility on search engines with our expert SEO services.</p>
+                </div>
+                <div class="service">
+                    <h3>Digital Marketing</h3>
+                    <p>Grow your online presence with our strategic digital marketing solutions.</p>
+                </div>
+                <div class="service">
+                    <h3>Content Writing</h3>
+                    <p>Engage your audience with high-quality and compelling content.</p>
+                </div>
+            </div>
+        </section>
+        </main>
+        </body>
+        </html>
+        

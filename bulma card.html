@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEVEL2(TASK1)Bulma Food Cards with Bootstrap Grid</title>
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <style>
+        body {
+            background: linear-gradient(to right, #bad7e4, #dfebe1);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(11, 11, 14, 0.2);
+        }
+
+        .button {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .action-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .card-footer-item {
+            font-weight: bold;
+             padding: 10px;
+             transition: background-color 0.3s, transform 0.2s;
+             border-radius: 5px;
+             cursor: pointer;
+            }
+
+        .card-footer-item:hover {
+            background-color: #007bff !important;
+            color: white !important;
+            transform: scale(1.05);
+            }
+
+        .has-text-danger {
+            color: #ff3860 !important;
+            }
+
+        .has-text-info {
+            color: #3273dc !important;
+            }
+
+        .has-text-success {
+            color: #23d160 !important;
+            }
+
+    </style>
+</head>
+
+<body class="has-background-light">
+
+    <div class="container mt-5">
+        <div class="row g-4">
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img3.jpg" alt="Delicious Pasta">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-4">Creamy Alfredo Pasta</p>
+                        <p class="subtitle is-6">by Chef Gourmet</p>
+                        <p>
+                            A rich and creamy Alfredo pasta dish, topped with parmesan and fresh basil. 🍝
+                            Perfectly cooked fettuccine infused with a smooth, garlicky sauce.
+                        </p>
+                        <time datetime="2025-03-16" class="has-text-grey-light">November 5, 2025</time>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item has-text-danger" onclick="showPopup('like')">💖 Like</a>
+                        <a href="#" class="card-footer-item has-text-info" onclick="showPopup('follow')">👍 Follow</a>
+                        <a href="#" class="card-footer-item has-text-success" onclick="showPopup('support')">✨ Support</a>
+                    </footer>
+                    
+                </div>
+            </div>
+
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img4.jpg" alt="Juicy Burger">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-4">Classic Cheeseburger</p>
+                        <p class="subtitle is-6">by Grill Master</p>
+                        <p>
+                            A juicy, grilled beef patty topped with melted cheddar, crisp lettuce, and fresh tomatoes. 🍔
+                            Served with a side of golden fries.
+                        </p>
+                        <time datetime="2025-03-16" class="has-text-grey-light">December 5, 2025</time>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item has-text-danger" onclick="showPopup('like')">💖 Like</a>
+                        <a href="#" class="card-footer-item has-text-info" onclick="showPopup('follow')">👍 Follow</a>
+                        <a href="#" class="card-footer-item has-text-success" onclick="showPopup('support')">✨ Support</a>
+                    </footer>
+                    
+                </div>
+            </div>
+
+            
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="img5.jpg" alt="Delightful Dessert">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-4">Chocolate Lava Cake</p>
+                        <p class="subtitle is-6">by Sweet Delights</p>
+                        <p>
+                            A warm, decadent chocolate lava cake with a gooey center, served with vanilla ice cream. 🍫🍰
+                            A perfect treat for any dessert lover!
+                        </p>
+                        <time datetime="2025-03-16" class="has-text-grey-light">January 5, 2026</time>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item has-text-danger" onclick="showPopup('like')">💖 Like</a>
+                        <a href="#" class="card-footer-item has-text-info" onclick="showPopup('follow')">👍 Follow</a>
+                        <a href="#" class="card-footer-item has-text-success" onclick="showPopup('support')">✨ Support</a>
+                    </footer>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showPopup(action) {
+            if (action === 'like') {
+                alert('You liked this post! 💖');
+            } else if (action === 'follow') {
+                alert('You are now following this creator! 👍');
+            } else if (action === 'support') {
+                alert('Thank you for your support! ✨');
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

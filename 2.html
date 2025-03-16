@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="ref.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: #333;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Website</div>
+            <button class="hamburger" id="hamburger">
+                &#9776;
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="res.html">Home</a></li>
+                <li><a href="2.html">About</a></li>
+                <li><a href="3.html">Services</a></li>
+                <li><a href="4.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a team of professionals dedicated to providing the best services for our customers.</p>
+            <div class="about-details">
+                <h3>Our Mission</h3>
+                <p>To deliver high-quality, innovative, and customer-centric solutions that meet industry standards.</p>
+                
+                <h3>Our Vision</h3>
+                <p>To be a leading provider of digital solutions, empowering businesses worldwide.</p>
+                
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>Experienced and dedicated professionals</li>
+                    <li>Customer-focused approach</li>
+                    <li>Cutting-edge technology</li>
+                    <li>Reliable and timely service delivery</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+

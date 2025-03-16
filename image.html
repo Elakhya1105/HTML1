@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL3(TASK1)Responsive Image Gallery & Slideshow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #83d1f9;
+            padding: 10px;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            width: 90%;
+            max-width: 700px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(218, 123, 230, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            animation: slide 20s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 120px;
+            height: 90px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal for Enlarged Image */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                height: 250px;
+            }
+
+            .gallery img {
+                width: 100px;
+                height: 75px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-container {
+                height: 200px;
+            }
+
+            .gallery img {
+                width: 80px;
+                height: 60px;
+            }
+
+            .modal img {
+                max-width: 95%;
+            }
+
+            .close {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Automatic Slideshow -->
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="img9.jpg" alt="Slide 1">
+            <img src="img10.jpg" alt="Slide 2">
+            <img src="img11.jpg" alt="Slide 3">
+        </div>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="gallery">
+        <img src="img9.jpg" onclick="openModal(this)">
+        <img src="img10.jpg" onclick="openModal(this)">
+        <img src="img11.jpg" onclick="openModal(this)">
+        <img src="img12.jpg" onclick="openModal(this)">
+        <img src="img13.jpg" onclick="openModal(this)">
+        <img src="img14.jpg" onclick="openModal(this)">
+        <img src="img15.jpg" onclick="openModal(this)">
+    </div>
+
+    <!-- Modal for Enlarged Image -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img">
+    </div>
+
+    <script>
+        function openModal(img) {
+            document.getElementById("modal").classList.add("active");
+            document.getElementById("modal-img").src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+        }
+    </script>
+
+</body>
+</html>
